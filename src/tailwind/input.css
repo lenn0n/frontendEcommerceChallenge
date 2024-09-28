@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply overflow-x-hidden
+}
+body {
+  @apply bg-dark text-white 
+}
+
+input, input:focus {
+  outline: none;
+  background-color: transparent;
+  border: none
+}
+
+/* Price Range */
+input[type="range"]::-webkit-slider-thumb {
+  pointer-events: auto;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  @apply bg-white;
+}
+
+.no-scroll {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.header-cn {
+  @apply lg:flex grid lg:px-0 py-5 gap-4 content-between place-items-stretch grid-cols-4 
+}
+
+.search-cn {
+  @apply  flex justify-start items-center 
+}
+
+.dropdown-cn {
+  @apply mt-4 absolute p-4 right-auto z-10 origin-top-left rounded-2xl shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none
+}
+
+.search-bar {
+  @apply flex w-[80vw] sm:w-[82vw] md:w-[34vw]  justify-between items-center bg-[#2B2828] rounded-full text-[#B3B3B3] 
+}
+
+.button-cn {
+  @apply bg-[#CA323D] text-white rounded-full p-2 h-[50px] w-[50px] flex items-center justify-center
+}
+
+.action-button-cn {
+  @apply rounded-full border-2 h-[50px] w-[50px] items-center justify-center  gap-2
+}
+
+.nav-cn {
+  @apply justify-end items-center gap-2
+}
+
+.keyword-section {
+  @apply  h-[50px] ps-[20px] sm:ps-[40px]  w-[50%] pt-1
+}
+
+.cat-section {
+  @apply  h-[50px] pt-1 border-l-[1px]  w-[50%] border-[#515151]
+}
