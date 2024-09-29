@@ -14,7 +14,7 @@ const TestData = () => {
     navigate("/")
   }
   return (
-    <div className={`${visible ? 'fixed' : 'hidden'} top-[70vh] left-0 max-w-[94vw]`}>
+    <div className={`${visible ? 'fixed z-[10]' : 'hidden z-[-0]'} top-[70vh] left-[10px] max-w-[80vw] lg:max-w-[30vw] overflow-hidden`}>
       <div className="  bg-dark p-5  border[#515151] border-[2px] rounded-2xl ms-4">
         <div className="flex justify-between items-center  mb-3">
           <div className="font-bold text-green-500 text-[19px]">Redux State</div>
