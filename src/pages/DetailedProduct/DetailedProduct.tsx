@@ -9,7 +9,7 @@ import CartIcon from "@assets/images/icons/cart.png"
 const DetailedProduct = () => {
   const [selectedPreview, setSelectedPreview] = useState<any>(Iphone1)
   return (
-    <div className='flex flex-col md:grid grid-cols-6 h-screen animated'>
+    <div className='flex flex-col md:grid grid-cols-6 h-[calc(100vh_-_92px)] w-full animated'>
       <div className="hidden md:block col-span-4 border-0 md:border-l-2 border-[#515151] ">
         <div className={`bg-slate-500 h-full bg-cover bg-no-repeat `}
           style={{ backgroundImage: `url(${selectedPreview})` }}>
@@ -30,7 +30,7 @@ const DetailedProduct = () => {
         </div>
       </div>
 
-      <div className="block md:hidden">
+      <div className="block md:hidden pt-[20px]">
         <img src={selectedPreview} className="rounded-md" alt="" />
       </div>
 
@@ -50,10 +50,10 @@ const DetailedProduct = () => {
           <img src={RedStar} alt="" className='h-[30px]' />
           <img src={RedStar} alt="" className='h-[30px]' />
           <img src={RedStar} alt="" className='h-[30px]' />
-          <div className="ms-3 text-[20px] xl:text-[30px]">(4,921)</div>
+          <div className="ms-3 text-[15px] xl:text-[25px]">(4,921)</div>
         </div>
-        <div className="flex gap-2 items-start lg:items-center flex-col xl:flex-row">
-          <div className="text-[40px] text-green-500 font-bold">$ 1,200.55</div>
+        <div className="flex items-start xl:items-center flex-col xl:flex-row">
+          <div className="text-[40px] text-green-500 font-bold me-2">$ 1,200.55</div>
           <div className="text-white-500 font-bold border-2 p-1 text-[10px] text-orange-500 border-orange-500 rounded-lg">40% OFF LIMITED ONLY!</div>
         </div>
         <div className="mt-4">
@@ -65,56 +65,56 @@ const DetailedProduct = () => {
         <div className="grid grid-cols-1 xl:grid-cols-2">
           <div className='me-5'>
             <div className="font-bold">Available Colors </div>
-            <div className="flex gap-2 mt-2">
-              <div className="rounded-full p-5 bg-green-600"></div>
-              <div className="rounded-full p-5 bg-yellow-600"></div>
-              <div className="rounded-full p-5 bg-blue-600"></div>
-              <div className="rounded-full p-5 bg-pink-600"></div>
-              <div className="rounded-full p-5 bg-orange-600"></div>
+            <div className="flex mt-2">
+              <div className="rounded-full p-5 bg-green-600 me-2"></div>
+              <div className="rounded-full p-5 bg-yellow-600 me-2"></div>
+              <div className="rounded-full p-5 bg-blue-600 me-2"></div>
+              <div className="rounded-full p-5 bg-pink-600 me-2"></div>
+              <div className="rounded-full p-5 bg-orange-600 me-2"></div>
             </div>
           </div>
           <div className="">
             <div className="font-bold">Sizes </div>
-            <div className="flex gap-2 mt-2">
-              <div className="font-bold border-2 rounded-full w-[35px] h-[35px] flex items-center justify-center">S</div>
-              <div className="font-bold border-2 rounded-full w-[35px] h-[35px] flex items-center justify-center">M</div>
-              <div className="font-bold border-2 rounded-full w-[35px] h-[35px] flex items-center justify-center">LG</div>
-              <div className="font-bold border-2 rounded-full w-[35px] h-[35px] flex items-center justify-center">XL</div>
+            <div className="flex mt-2">
+              <div className="font-bold border-2 rounded-full w-[35px] h-[35px] flex items-center justify-center me-2">S</div>
+              <div className="font-bold border-2 rounded-full w-[35px] h-[35px] flex items-center justify-center me-2">M</div>
+              <div className="font-bold border-2 rounded-full w-[35px] h-[35px] flex items-center justify-center me-2">LG</div>
+              <div className="font-bold border-2 rounded-full w-[35px] h-[35px] flex items-center justify-center me-2">XL</div>
             </div>
           </div>
         </div>
         <div className="border-[#515151] border-0 md:border-[1px] my-5"></div>
         <div className="font-bold">Comments (112) </div>
-        <div className="flex gap-2 mt-4">
+        <div className="flex  mt-4">
           <div className="rounded-full h-10 w-10 bg-gray-600"></div>
-          <div className="">
+          <div className="ms-2">
             <div className="font-bold">John Doe</div>
             <div className="text-sm text-[#ccc]">October 13, 2022</div>
             <div className="italic">"I love the new design!"</div>
           </div>
         </div>
-        <div className="flex gap-2 mt-4">
+        <div className="flex mt-4">
           <div className="rounded-full h-10 w-10 bg-gray-600"></div>
-          <div className="">
+          <div className="ms-2">
             <div className="font-bold">Taylor Swift</div>
             <div className="text-sm text-[#ccc]">October 13, 2022</div>
             <div className="italic">"Please come to my 1989 World Tour!"</div>
           </div>
         </div>
 
-        <div className="flex items-center justify-center mt-5">
-          <input type="checkbox" />
-          <div className="ms-2">Use my coin wallet as payment method and earn points. </div>
+        <div className="flex items-center justify-start mt-5 text-[#ccc]">
+          <div className="ms-2">View All Comments</div>
+          <img src={Arrow} alt="" className='ms-1' height={'15px'} width={'15px'} />
         </div>
-        <div className="flex gap-3 items-center justify-center flex-col xl:flex-row">
-          <div className="flex items-center justify-center mt-4">
-            <button className='px-5 py-2 bg-[#CA323D] rounded-lg text-[20px] flex gap-2 items-center'>
-              <img src={CartIcon} alt="" />
+        <div className="flex items-center justify-center flex-col xl:flex-row mt-7">
+          <div className="flex items-center justify-center mx-1 w-full mt-3">
+            <button className='px-5 py-2 bg-[#CA323D] rounded-lg text-[20px] flex items-center  justify-center w-full'>
+              <img src={CartIcon} alt="" className='me-2'/>
               Add to Cart
             </button>
           </div>
-          <div className="flex items-center justify-center mt-4">
-            <button className='px-5 py-2 bg-blue-500 rounded-lg text-[20px]'>
+          <div className="flex items-center justify-center w-full mx-1 mt-3">
+            <button className='px-5 py-2 bg-blue-500 rounded-lg text-[20px]  w-full'>
               <div className="flex items-center justify-center">
                 Buy Now
                 <img src={Arrow} alt="" className='ms-1' height={'15px'} width={'15px'} />

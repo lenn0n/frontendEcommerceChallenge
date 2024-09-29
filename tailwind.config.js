@@ -20,7 +20,7 @@ module.exports = {
     extend: {
       colors: {
         'dark': '#110606'
-      }
+      },
     },
   },
   plugins: [],

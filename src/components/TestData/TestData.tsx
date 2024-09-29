@@ -22,24 +22,24 @@ const TestData = () => {
             <img src={CloseIcon} alt='' height={'10px'} width={'15px'} />
           </button>
         </div>
-        <div className="flex gap-2">
+        <div className="flex">
           <label className="font-bold">Keyword:</label>
-          <p className="text-[#ccc]"> {states.cart.search.keyword ?? 'No query yet.'}</p>
+          <p className="text-[#ccc] ms-2"> {states.cart.search.keyword ?? 'No query yet.'}</p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex">
           <label className="font-bold">Category:</label>
-          <p className="text-[#ccc]"> {JSON.stringify(states.cart.search.category)}</p>
+          <p className="text-[#ccc] ms-2"> {JSON.stringify(states.cart.search.category)}</p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex">
           <label className="font-bold">Platforms:</label>
-          <p className="text-[#ccc]"> {JSON.stringify(states.cart.filterModal?.data?.platformSelected)}</p>
+          <p className="text-[#ccc] ms-2"> {JSON.stringify(states.cart.filterModal?.data?.platformSelected)}</p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex">
           <label className="font-bold">Offcanvas:</label>
-          <p className="text-[#ccc]">{JSON.stringify(states.system.offcanvas.show)}</p>
+          <p className="text-[#ccc] ms-2">{JSON.stringify(states.system.offcanvas.show)}</p>
         </div>
 
-        <div className="flex gap-2 text-red-500 font-bold mt-4" role='button' onClick={handleLogout}>LOGOUT
+        <div className="flex text-red-500 font-bold mt-4" role='button' onClick={handleLogout}>LOGOUT
         </div>
       </div>
     </div>

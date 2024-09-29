@@ -2,9 +2,11 @@ import LazyImage from '@components/LazyImage/LazyImage'
 import React from 'react'
 import StarIcon from "@assets/images/icons/star.png"
 import { useNavigate } from 'react-router-dom'
+import { useAppSelector } from '@hooks/useRedux'
 
 const Products = () => {
   const navigate = useNavigate()
+  const category = useAppSelector((state) => state.cart.search.category)
   const ProductList = [
     {
       image: 'https://img.freepik.com/free-photo/portrait-futuristic-female-humanoid-with-advanced-technology_23-2151666246.jpg',
@@ -247,7 +249,7 @@ const Products = () => {
 
   return (
     <div>
-      <div className="text-[32px] font-bold mb-5">Parent category {'>'} Child category</div>
+      <div className="text-[32px] font-bold my-5">{String(category.value.split("-")[0].toUpperCase())} {category.name !== 'All' ? '> ' + category.name : 'Categories'}</div>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ps-2 ">
         {ProductList.map((data) => <ProductItem product={data} />)}
       </div>

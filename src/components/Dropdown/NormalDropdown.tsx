@@ -48,9 +48,9 @@ const NormalDropdown = ({ children, onSelect, customClassName, list, selected }:
                 className={`px-3 py-1 text-start hover:bg-[#443E3E] hover:rounded-2xl mt-1 hover:text-white
             ${selected?.includes(data.value) ? 'bg-[#655D5E] rounded-2xl' : ''} w-[90%]`}
                 type='button'>
-                <div className='flex gap-2 items-center'>
+                <div className='flex items-center'>
                   {data?.icon && <img src={data?.icon} alt='' className={`h-[10px]`} />}
-                  <div className="">{data.name}</div>
+                  <div className="ms-2">{data.name}</div>
                 </div>
               </button>
             }

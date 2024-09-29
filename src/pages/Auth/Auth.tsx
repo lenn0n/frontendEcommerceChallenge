@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import useEncryption from '@hooks/useEncryption'
 import useCookie from '@hooks/useCookie'
+import Arrow from "@assets/images/arrow-right.svg"
 
 const Auth = () => {
   const navigate = useNavigate()
   const { encode, decode } = useEncryption()
   const { setCookie } = useCookie()
   const [pass, setPassword] = useState<string>("")
-  const [message, setMessage] = useState<string>("This website was protected.")
+  const [message, setMessage] = useState<string>("Protected Page")
 
   // SET PASSWORD IN STATE
   const handleCheckInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,21 +38,24 @@ const Auth = () => {
 
   return (
     <div className='h-screen w-screen flex items-center justify-center flex-col'>
-      <div className={`font-bold text-[20px] my-3 ${message == 'Incorrect Password' ? 'text-red-500' : 'text-green-500'}`}>
+      <div className={`font-bold text-[20px] my-3 ${message == 'Incorrect Password' ? 'text-red-500' : 'text-gray-500'}`}>
         {message}
       </div>
-      <div className="border-2 border-[#515151] p-4 rounded-xl">
+      <div className="border-[1px] border-[#515151] p-4 rounded-lg">
         <input type="password"
           onChange={handleCheckInput}
           value={pass}
-          placeholder='Enter Password'
+          placeholder='******************************'
           onKeyUp={watchEnterKey}
           autoFocus />
       </div>
       <button
-        className='bg-yellow-500 text-black font-bold mt-4 px-4 py-2 rounded-lg'
+        className='bg-gray-800 text-gray-400 mt-4 px-4 py-2 rounded-2xl flex items-center text-sm '
         type="button"
-        onClick={handleCheckPass}>Login</button>
+        onClick={handleCheckPass}>
+          Login
+          <img src={Arrow} alt="" className='ms-1' height={'10px'} width={'10px'} />
+        </button>
     </div>
   )
 }
