@@ -39,8 +39,8 @@ const TestData = () => {
           <p className="text-[#ccc] ms-2">{JSON.stringify(states.system.offcanvas.show)}</p>
         </div>
 
-        <div className="flex text-red-500 font-bold mt-4" role='button' onClick={handleLogout}>LOGOUT
-        </div>
+        {/* <div className="flex text-red-500 font-bold mt-4" role='button' onClick={handleLogout}>LOGOUT
+        </div> */}
       </div>
     </div>
   )

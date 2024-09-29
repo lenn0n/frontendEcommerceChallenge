@@ -8,7 +8,7 @@ import useEncryption from '@hooks/useEncryption'
 const Wrapper = ({ children }: { children: React.ReactNode }) => {
   const { getCookie } = useCookie()
   const { decode } = useEncryption()
-  const [ready, setReady] = useState<boolean>(false)
+  const [ready, setReady] = useState<boolean>(true)
 
   const Padding = ({ children }:
     { children: React.ReactNode }) =>
@@ -30,13 +30,13 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => {
       // NOPE :P
       window.location.href = '/'
     }
-    setTimeout(() => {
-      setReady(true)
-    }, 1000);
+    // setTimeout(() => {
+    //   setReady(true)
+    // }, 1000);
   }
 
   useEffect(() => {
-    checkIfAuthenticated()
+    // checkIfAuthenticated()
     window.scrollTo(0, 0)
   }, [])
 
