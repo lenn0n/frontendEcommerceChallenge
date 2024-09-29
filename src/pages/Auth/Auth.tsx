@@ -12,9 +12,7 @@ const Auth = () => {
 
   const handleCheckInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    if (value) {
-      setPassword(value)
-    }
+    setPassword(value)
   }
 
   const handleCheckPass = () => {
@@ -27,13 +25,20 @@ const Auth = () => {
     }
   }
 
+  const watchEnterKey  = (e: React.KeyboardEvent<HTMLInputElement>) => {
+
+    if (e.code === 'Enter'){
+      handleCheckPass()
+    }
+  }
+
   return (
     <div className='h-screen w-screen flex items-center justify-center flex-col'>
-      <div className="font-bold text-[20px] my-3 text-red-500">{message}</div>
+      <div className="font-bold text-[20px] my-3 text-green-500">{message}</div>
       <div className="border-2 border-[#515151] p-4 rounded-xl">
-        <input type="password" onChange={handleCheckInput} value={pass} placeholder='Enter Password' className='' />
+        <input type="password" onChange={handleCheckInput} value={pass} placeholder='Enter Password' className='' onKeyUp={watchEnterKey} autoFocus/>
       </div>
-      <button className='bg-blue-800 text-white mt-2 px-4 py-2 rounded-lg' type="button" onClick={handleCheckPass}>Login</button>
+      <button className='bg-yellow-500 text-black font-bold mt-4 px-4 py-2 rounded-lg' type="button" onClick={handleCheckPass} >Login</button>
     </div>
   )
 }

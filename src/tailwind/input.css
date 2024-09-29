@@ -9,6 +9,20 @@ body {
   @apply bg-dark text-white 
 }
 
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animated {
+  animation: fadeInAnimation ease 0.5s;
+  animation-iteration-count: 1;
+}
+
 input, input:focus {
   outline: none;
   background-color: transparent;

@@ -33,6 +33,7 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     checkIfAuthenticated()
+    window.scrollTo(0,0)
   }, [])
 
 

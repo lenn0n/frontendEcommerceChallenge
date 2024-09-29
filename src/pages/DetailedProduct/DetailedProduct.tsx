@@ -9,7 +9,7 @@ import CartIcon from "@assets/images/icons/cart.png"
 const DetailedProduct = () => {
   const [selectedPreview, setSelectedPreview] = useState<any>(Iphone1)
   return (
-    <div className='flex flex-col md:grid grid-cols-6 h-screen'>
+    <div className='flex flex-col md:grid grid-cols-6 h-screen animated'>
       <div className="hidden md:block col-span-4 border-0 md:border-l-2 border-[#515151] ">
         <div className={`bg-slate-500 h-full bg-cover bg-no-repeat `}
           style={{ backgroundImage: `url(${selectedPreview})` }}>

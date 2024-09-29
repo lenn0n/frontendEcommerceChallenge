@@ -4,7 +4,9 @@ import Products from '@pages/Products/Products'
 const Landing = () => {
   return (
     <>
-      <Products/>
+      <div className="animated">
+        <Products />
+      </div>
     </>
   )
 }

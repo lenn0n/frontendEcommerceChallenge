@@ -213,6 +213,7 @@ const Products = () => {
 
   const redirectToDetailedPage = () => {
     navigate("/detailed-product")
+    window.scrollTo(0,0)
   }
 
   const ProductItem = ({ product }: any) => {

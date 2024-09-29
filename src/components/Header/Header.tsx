@@ -16,6 +16,7 @@ const Header = () => {
   const navigate = useNavigate()
   const redirectToHome = () => {
     navigate("/home")
+    window.scrollTo(0,0)
   }
 
   useEffect(() => {
@@ -39,7 +40,7 @@ const Header = () => {
       <header className={` ${isScrolled ? ' z-[2] fixed mt-[-90px]' : ''}`}>
         <nav className={`header-cn bg-dark w-[100vw] px-[5px] sm:px-[20px] lg:px-[80px] border-b-[1px] border-[#515151] 
           ${isScrolled ? 'justify-center ' : 'justify-between '} `}>
-          {isScrolled ? <figure className='hidden sm:block md:hidden col-span-2 md:col-span-1 order-1 mt-4'>
+          {isScrolled ? <figure className='hidden sm:block md:hidden col-span-2 md:col-span-1 order-1 mt-4' onClick={redirectToHome}>
             <img className='h-[30px]' src={Logo} alt="logo" />
           </figure> :
             <figure className='hidden sm:block col-span-2 md:col-span-1 order-1 mt-4' role='button' onClick={redirectToHome}>
