@@ -3,6 +3,7 @@ import React from 'react'
 import StarIcon from "@assets/images/icons/star.png"
 import { useNavigate } from 'react-router-dom'
 import { useAppSelector } from '@hooks/useRedux'
+import FilterIcon from "@assets/images/icons/filter.png"
 
 const Products = () => {
   const navigate = useNavigate()
@@ -215,32 +216,34 @@ const Products = () => {
 
   const redirectToDetailedPage = () => {
     navigate("/detailed-product")
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
   }
 
   const ProductItem = ({ product }: any) => {
     return (
-      <div className='flex flex-col items-start my-3' role="button" onClick={redirectToDetailedPage}>
-        <div className="rounded-lg w-[140px] sm:w-[120px] msm:w-[210px] lg:w-[177px] xl:w-[240px] xxl:w-[300px] ">
-          <LazyImage image={product?.image} />
-        </div>
-        <div className="flex flex-col">
-          <div className="font-bold mt-3">
-            {product?.product_name}
+      <div className="flex justify-center">
+        <div className='flex flex-col items-start my-3' role="button" onClick={redirectToDetailedPage}>
+          <div className="rounded-lg w-[140px] sm:w-[120px] msm:w-[210px] lg:w-[177px] xl:w-[200px] xxl:w-[250px] ">
+            <LazyImage image={product?.image} />
           </div>
-          <div className="text-[#B3B3B3] mb-2">
-            {product?.creator_name}
-          </div>
-          <div className="flex items-center">
-            {Array.from(Array(product?.rating).keys()).map(() =>
-              <div className="me-1">
-                <img src={StarIcon} alt="" height={17} width={17} />
-              </div>
-            )}
-            <div className="ms-1">  {product?.rating}.0</div>
-          </div>
-          <div className="my-1">
-            $ {product?.price}
+          <div className="flex flex-col">
+            <div className="font-bold mt-3">
+              {product?.product_name}
+            </div>
+            <div className="text-[#B3B3B3] mb-2">
+              {product?.creator_name}
+            </div>
+            <div className="flex items-center">
+              {Array.from(Array(product?.rating).keys()).map(() =>
+                <div className="me-1">
+                  <img src={StarIcon} alt="" height={17} width={17} />
+                </div>
+              )}
+              <div className="ms-1">  {product?.rating}.0</div>
+            </div>
+            <div className="my-1">
+              $ {product?.price}
+            </div>
           </div>
         </div>
       </div>
@@ -249,8 +252,12 @@ const Products = () => {
 
   return (
     <div>
-      <div className="text-[32px] font-bold my-5">{String(category.value.split("-")[0].toUpperCase())} {category.name !== 'All' ? '> ' + category.name : 'Categories'}</div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ps-2 ">
+      <div className="text-[28px] font-bold my-5 flex items-center ">
+        <img src={FilterIcon} alt="filter_button" className='w-[25px] h-[25px] me-2' />
+        {String(category.value.split("-")[0].toUpperCase().substring(0, 1))}
+        {String(category.value.split("-")[0].substring(1))} {category.name !== 'All' ? '> ' + category.name : 'Categories'}
+      </div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 ps-2">
         {ProductList.map((data) => <ProductItem product={data} />)}
       </div>
     </div>
