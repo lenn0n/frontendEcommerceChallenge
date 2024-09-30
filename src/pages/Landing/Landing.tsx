@@ -3,11 +3,9 @@ import Products from '@pages/Products/Products'
 
 const Landing = () => {
   return (
-    <>
-      <div className="animated">
-        <Products />
-      </div>
-    </>
+    <div className="animated">
+      <Products />
+    </div>
   )
 }
 

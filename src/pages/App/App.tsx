@@ -32,9 +32,7 @@ function App() {
 
   return <Provider store={store}>
     <Offcanvas />
-
     <RouterProvider router={router} />
-
   </Provider>
 }
 
