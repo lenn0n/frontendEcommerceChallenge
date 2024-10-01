@@ -221,16 +221,16 @@ const Products = () => {
 
   const ProductItem = ({ product }: any) => {
     return (
-      <div className="flex justify-center">
+      <div className="flex justify-center p-2 md:p-0">
         <div className='flex flex-col items-start my-3' role="button" onClick={redirectToDetailedPage}>
           <div className="rounded-lg w-[140px] sm:w-[120px] msm:w-[210px] lg:w-[177px] xl:w-[200px] xxl:w-[250px] ">
             <LazyImage image={product?.image} />
           </div>
           <div className="flex flex-col">
-            <div className="font-bold mt-3">
+            <div className="font-bold mt-3  max-h-[30px] max-w-[100%] overflow-hidden text-clip ">
               {product?.product_name}
             </div>
-            <div className="text-[#B3B3B3] mb-2">
+            <div className="text-[#B3B3B3] mb-2 max-h-[30px] max-w-[100%] overflow-hidden text-clip ">
               {product?.creator_name}
             </div>
             <div className="flex items-center">
@@ -239,7 +239,7 @@ const Products = () => {
                   <img src={StarIcon} alt="" height={17} width={17} />
                 </div>
               )}
-              <div className="ms-1">  {product?.rating}.0</div>
+              <div className="ms-1 hidden md:block">  {product?.rating}.0</div>
             </div>
             <div className="my-1">
               $ {product?.price}
@@ -257,7 +257,7 @@ const Products = () => {
         {String(category.value.split("-")[0].toUpperCase().substring(0, 1))}
         {String(category.value.split("-")[0].substring(1))} {category.name !== 'All' ? '> ' + category.name : 'Categories'}
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 ps-2">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
         {ProductList.map((data) => <ProductItem product={data} />)}
       </div>
     </div>

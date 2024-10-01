@@ -12,7 +12,7 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => {
 
   const Padding = ({ children }:
     { children: React.ReactNode }) =>
-    <div className='px-[5px] sm:px-[20px] lg:px-[80px] '>{children}</div>
+    <div className='px-[0px] sm:px-[20px] lg:px-[80px] '>{children}</div>
 
   const Border = () => <div className='border-b-[1px] border-[#515151]' />
 
